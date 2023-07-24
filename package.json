@@ -11,7 +11,7 @@
     "iron_core": ">=0.2.4"
   },
   "devDependencies": {
-    "coffee-script": "1.6.2"
+    "coffee-script": "1.12.7"
   },
   "repository": {
     "type": "git",
