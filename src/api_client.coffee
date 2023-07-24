@@ -22,7 +22,7 @@ class APIClient extends ironCore.Client
     "iron_cache_node-#{version} (#{super()})"
 
   url: ->
-    super() + @options.api_version.toString() + '/projects/#{@options.project_id}/caches'
+    super() + @options.api_version.toString() + "/projects/#{@options.project_id}/caches"
 
   headers: ->
     _.extend({}, super(), {'Authorization': "OAuth #{@options.token}"})

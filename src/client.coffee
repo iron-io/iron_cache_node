@@ -9,7 +9,7 @@ class Client
   cachesList: (options, cb) ->
     @api.cachesList(options, (error, body) ->
       if not error?
-        cb(error, body.codes)
+        cb(error, body)
       else
         cb(error, body)
     )
