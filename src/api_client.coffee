@@ -34,10 +34,10 @@ class APIClient extends ironCore.Client
       parseResponseBind(error, response, body, cb)
     )
 
-  getCache: (cache_name, cb) ->
+  getCache: (cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
 
-    @get("/#{cache_name}", {}, (error, response, body) ->
+    @get("/#{cache_name}", options, (error, response, body) ->
       parseResponseBind(error, response, body, cb)
     )
 

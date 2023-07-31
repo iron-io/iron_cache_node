@@ -14,8 +14,8 @@ class Client
         cb(error, body)
     )  
   
-  getCache: (cb) ->
-    @api.getCache(@api.options.cache_name, (error, body) ->
+  getCache: (cache_name, options, cb) ->
+    @api.getCache(cache_name, options, (error, body) ->
       if not error?
         cb(error, body)
       else
