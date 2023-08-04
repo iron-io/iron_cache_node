@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-     "iron_cache": "iron-io/iron_cache_node#test"
-  }
-}
