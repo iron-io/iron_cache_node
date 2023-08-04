@@ -9,6 +9,7 @@
     "pkginfo": "0.3.0",
     "underscore": "1.12.1",
     "iron_core": ">=0.2.4"
+   
   },
   "devDependencies": {
     "coffee-script": "1.12.7"
