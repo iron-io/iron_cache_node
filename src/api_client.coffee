@@ -41,5 +41,40 @@ class APIClient extends ironCore.Client
       parseResponseBind(error, response, body, cb)
     )
 
+  deleteCache: (cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @delete("/#{cache_name}", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
+
+  clearCache: (cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @post("/#{cache_name}/clear", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
+
+  putItem: (key, cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @put("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
+
+  IncrementItem: (key, cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @post("/#{cache_name}/items/#{key}/increment", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
+
+  getCacheItem: (key, cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @get("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
+
+  deleteItem: (key, cache_name, options, cb) ->
+    parseResponseBind = _.bind(@parseResponse, @)
+  @delete("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+    parseResponseBind(error, response, body, cb)
+  )
 
 module.exports.APIClient = APIClient
