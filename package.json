@@ -1,6 +1,6 @@
 {
   "name": "iron_cache",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Node client for IronCache",
   "homepage": "https://github.com/iron-io/iron_cache_node",
   "author": "Iron.io, Inc",
