@@ -24,51 +24,51 @@ class Client
 
   deleteCache: (cache_name, options, cb) ->
     @api.deleteCache(cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
   clearCache: (cache_name, options, cb) ->
     @api.clearCache(cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
   putItem: (key, cache_name, options, cb) ->
     @api.putItem(key, cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
   IncrementItem: (key, cache_name, options, cb) ->
     @api.IncrementItem(key, cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
-  getCacheItem: (key, cache_name, options, cb) ->
-    @api.getCacheItem(key, cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+  getItem: (key, cache_name, options, cb) ->
+    @api.getItem(key, cache_name, options, (error, body) ->
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
   deleteItem: (key, cache_name, options, cb) ->
     @api.deleteItem(key, cache_name, options, (error, body) ->
-    if error == null
-      cb(error, body)
-    else
-      cb(error, body)
-  )
+      if error == null
+        cb(error, body)
+      else
+        cb(error, body)
+    )
 
   
 module.exports.Client = Client

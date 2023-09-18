@@ -43,38 +43,38 @@ class APIClient extends ironCore.Client
 
   deleteCache: (cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @delete("/#{cache_name}", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @delete("/#{cache_name}", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
   clearCache: (cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @post("/#{cache_name}/clear", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @post("/#{cache_name}/clear", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
   putItem: (key, cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @put("/#{cache_name}/items/#{key}", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @put("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
   IncrementItem: (key, cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @post("/#{cache_name}/items/#{key}/increment", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @post("/#{cache_name}/items/#{key}/increment", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
-  getCacheItem: (key, cache_name, options, cb) ->
+  getItem: (key, cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @get("/#{cache_name}/items/#{key}", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @get("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
   deleteItem: (key, cache_name, options, cb) ->
     parseResponseBind = _.bind(@parseResponse, @)
-  @delete("/#{cache_name}/items/#{key}", options, (error, response, body) ->
-    parseResponseBind(error, response, body, cb)
-  )
+    @delete("/#{cache_name}/items/#{key}", options, (error, response, body) ->
+      parseResponseBind(error, response, body, cb)
+    )
 
 module.exports.APIClient = APIClient
