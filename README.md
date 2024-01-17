@@ -9,6 +9,7 @@ Ensure you have Node.js and npm installed. You can then install the library usin
 
 ```bash
 npm install iron-cache-node
+```
 
 Usage
 '''javascript
@@ -19,6 +20,8 @@ const client = new APIClient({
   token: 'your_token',
   api_version: 1, // optional, defaults to 1
 });
+```
+
 
 // Example: List all caches
 client.cachesList({}, (error, response) => {
