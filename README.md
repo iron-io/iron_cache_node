@@ -12,7 +12,7 @@ npm install iron-cache-node
 ```
 
 Usage
-'''javascript
+```
 const { APIClient } = require('iron-cache-node');
 // Initialize the client with your project credentials
 const client = new APIClient({
@@ -22,8 +22,9 @@ const client = new APIClient({
 });
 ```
 
-
-// Example: List all caches
+```
+Example: List all caches
+```
 client.cachesList({}, (error, response) => {
   if (error) {
     console.error('Error:', error);
@@ -31,8 +32,10 @@ client.cachesList({}, (error, response) => {
     console.log('Caches:', response);
   }
 });
+```
 
-// Example: Get information about a specific cache
+ Example: Get information about a specific cache
+ ```
 const cacheName = 'example_cache';
 client.getCache(cacheName, {}, (error, response) => {
   if (error) {
@@ -41,8 +44,9 @@ client.getCache(cacheName, {}, (error, response) => {
     console.log('Cache Info:', response);
   }
 });
+```
 
-// Other available methods: deleteCache, clearCache, putItem, IncrementItem, getItem, deleteItem, etc.
+Other available methods: deleteCache, clearCache, putItem, IncrementItem, getItem, deleteItem, etc.
 API Reference
 APIClient(options)
 Constructor for creating an instance of the APIClient. It requires the following options:
@@ -75,8 +79,4 @@ Get information about a specific item in a cache.
 deleteItem(key, cache_name, options, callback)
 Delete a specific item from a cache.
 
-Contributing
-Feel free to contribute to the development of this library. Fork the repository, make your changes, and submit a pull request.
 
-License
-This library is licensed under the MIT License. See the LICENSE file for details.
