@@ -22,8 +22,9 @@ const client = new APIClient({
 });
 ```
 
-```
+
 Example: List all caches
+
 ```
 client.cachesList({}, (error, response) => {
   if (error) {
