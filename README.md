@@ -1,26 +1,28 @@
 iron_cache_node
 ===============
 
-iron-cache-node API Client
-This is a Node.js library for interacting with the Iron Cache service. It provides a convenient way to manage caches, manipulate items, and perform various cache-related operations.
 
-Installation
-Ensure you have Node.js and npm installed. You can then install the library using the following:
-
-```bash
-npm install iron-cache-node
-```
-
+Node.js Implementation of IronCache 
 Usage
-```
-const { APIClient } = require('iron-cache-node');
-// Initialize the client with your project credentials
-const client = new APIClient({
-  project_id: 'your_project_id',
-  token: 'your_token',
-  api_version: 1, // optional, defaults to 1
-});
-```
+To utilize the IronCache API with this Node.js module, follow these steps:
+
+Create an Iron project.
+In your dashboard, click the credentials link (the key icon) to find your Project ID and Token. These credentials are necessary for API usage.
+Initialize the module using your Project ID and Token.
+Specify environment variables to your application (IRON_CACHE_PROJECT and IRON_CACHE_TOKEN).
+
+API Reference
+APIClient(options)
+Constructor for creating an instance of the APIClient. It requires the following options:
+
+project_id: Your Iron Cache project ID.
+token: Your Iron Cache authentication token.
+api_version: (Optional) The version of the Iron Cache API to use. Defaults to 1.
+
+'''
+export IRON_PROJECT_ID=xxx
+export IRON_TOKEN=yyy
+'''
 
 
 Example: List all caches
@@ -47,37 +49,88 @@ client.getCache(cacheName, {}, (error, response) => {
 });
 ```
 
-Other available methods: deleteCache, clearCache, putItem, IncrementItem, getItem, deleteItem, etc.
-API Reference
-APIClient(options)
-Constructor for creating an instance of the APIClient. It requires the following options:
+Delete a specific cache identified by cache_name. This operation permanently removes the cache and all its associated items.
+'''
+client.deleteCache('example_cache', {}, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Cache deleted:', response);
+  }
+});
+'''
 
-project_id: Your Iron Cache project ID.
-token: Your Iron Cache authentication token.
-api_version: (Optional) The version of the Iron Cache API to use. Defaults to 1.
-Methods
-cachesList(options, callback)
-List all caches within the project.
+Clear all items in a specific cache identified by cache_name. The cache structure remains intact, but all stored items are removed.
+'''
+client.clearCache('example_cache', {}, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Cache cleared:', response);
+  }
+});
+'''
 
-getCache(cache_name, options, callback)
-Get information about a specific cache.
+Put an item into a specific cache identified by cache_name. The key parameter represents the unique identifier for the item.
 
-deleteCache(cache_name, options, callback)
-Delete a specific cache.
+'''
+const key = 'example_key';
+const value = 'example_value';
 
-clearCache(cache_name, options, callback)
-Clear all items in a specific cache.
+client.putItem(key, 'example_cache', { value }, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Item added:', response);
+  }
+});
+'''
 
-putItem(key, cache_name, options, callback)
-Put an item into a specific cache.
+Increment the value of a numeric item in a specific cache. This is useful for managing counters or other numeric data.
 
-IncrementItem(key, cache_name, options, callback)
-Increment the value of a numeric item in a specific cache.
 
-getItem(key, cache_name, options, callback)
-Get information about a specific item in a cache.
+'''
+const key = 'example_key';
 
-deleteItem(key, cache_name, options, callback)
-Delete a specific item from a cache.
+client.IncrementItem(key, 'example_cache', {}, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Item incremented:', response);
+  }
+});
+'''
+
+Get information about a specific item identified by key in a cache identified by cache_name.
+
+'''
+const key = 'example_key';
+
+client.getItem(key, 'example_cache', {}, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Item information:', response);
+  }
+});
+'''
+
+Delete a specific item identified by key from a cache identified by cache_name.
+
+'''
+const key = 'example_key';
+
+client.deleteItem(key, 'example_cache', {}, (error, response) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Item deleted:', response);
+  }
+});
+'''
+
+
+
+
 
 
