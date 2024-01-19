@@ -4,6 +4,11 @@ iron_cache_node
 
 Node.js Implementation of IronCache 
 
+Please follow the steps on this link to setup nodejs.
+
+https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/
+
+
 Usage
 
 To utilize the IronCache API with this Node.js module, follow these steps:
@@ -12,6 +17,8 @@ Create an Iron project.
 In your dashboard, click the credentials link (the key icon) to find your Project ID and Token. These credentials are necessary for API usage.
 Initialize the module using your Project ID and Token.
 Specify environment variables to your application (IRON_CACHE_PROJECT and IRON_CACHE_TOKEN).
+
+
 
 API Reference
 APIClient(options)
