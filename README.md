@@ -21,12 +21,12 @@ project_id: Your Iron Cache project ID.
 token: Your Iron Cache authentication token.
 api_version: (Optional) The version of the Iron Cache API to use. Defaults to 1.
 
-'''
+```
 export IRON_PROJECT_ID=xxx
 
 
 export IRON_TOKEN=yyy
-'''
+```
 
 
 Example: List all caches
