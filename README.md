@@ -50,7 +50,7 @@ client.getCache(cacheName, {}, (error, response) => {
 ```
 
 Delete a specific cache identified by cache_name. This operation permanently removes the cache and all its associated items.
-'''
+```
 client.deleteCache('example_cache', {}, (error, response) => {
   if (error) {
     console.error('Error:', error);
@@ -58,10 +58,10 @@ client.deleteCache('example_cache', {}, (error, response) => {
     console.log('Cache deleted:', response);
   }
 });
-'''
+```
 
 Clear all items in a specific cache identified by cache_name. The cache structure remains intact, but all stored items are removed.
-'''
+```
 client.clearCache('example_cache', {}, (error, response) => {
   if (error) {
     console.error('Error:', error);
@@ -69,11 +69,11 @@ client.clearCache('example_cache', {}, (error, response) => {
     console.log('Cache cleared:', response);
   }
 });
-'''
+```
 
 Put an item into a specific cache identified by cache_name. The key parameter represents the unique identifier for the item.
 
-'''
+```
 const key = 'example_key';
 const value = 'example_value';
 
@@ -84,12 +84,11 @@ client.putItem(key, 'example_cache', { value }, (error, response) => {
     console.log('Item added:', response);
   }
 });
-'''
-
+```
 Increment the value of a numeric item in a specific cache. This is useful for managing counters or other numeric data.
 
 
-'''
+```
 const key = 'example_key';
 
 client.IncrementItem(key, 'example_cache', {}, (error, response) => {
@@ -99,11 +98,11 @@ client.IncrementItem(key, 'example_cache', {}, (error, response) => {
     console.log('Item incremented:', response);
   }
 });
-'''
+```
 
 Get information about a specific item identified by key in a cache identified by cache_name.
 
-'''
+```
 const key = 'example_key';
 
 client.getItem(key, 'example_cache', {}, (error, response) => {
@@ -113,11 +112,11 @@ client.getItem(key, 'example_cache', {}, (error, response) => {
     console.log('Item information:', response);
   }
 });
-'''
+```
 
 Delete a specific item identified by key from a cache identified by cache_name.
 
-'''
+```
 const key = 'example_key';
 
 client.deleteItem(key, 'example_cache', {}, (error, response) => {
@@ -127,7 +126,7 @@ client.deleteItem(key, 'example_cache', {}, (error, response) => {
     console.log('Item deleted:', response);
   }
 });
-'''
+```
 
 
 
